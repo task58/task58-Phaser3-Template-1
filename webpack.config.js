@@ -2,9 +2,6 @@ const path = require("path");
 const pathToPhaser = path.join(__dirname,"node_modules/phaser")
 const phaser = path.join(pathToPhaser,"dist/phaser.js")
 
-console.log(__dirname)
-console.log(phaser)
-
 module.exports = {
     mode : "development",
     entry : "./src/main.ts",
@@ -30,5 +27,13 @@ module.exports = {
                 
             }
         ]
+    },
+    devServer:{
+        static:{
+            directory : path.resolve(__dirname,"./dist")
+        },
+        host:"127.0.0.1",
+        port:8080,
+        open:true
     }
 }
