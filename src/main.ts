@@ -14,7 +14,9 @@ const config : Phaser.Types.Core.GameConfig = {
         parent : "game"
     },
 
-    scene : Scenes
+    scene : Scenes,
+
+    
 
 }
 
@@ -26,4 +28,5 @@ export class Game extends Phaser.Game {
 
 window.addEventListener("load",()=>{
     const game = new Game(config);
+    game.scene.start("load")
 })
