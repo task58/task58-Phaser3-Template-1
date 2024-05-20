@@ -1,24 +1,20 @@
 import "phaser"
 
-import Scenes from "./scenes/scenes"
+import Scenes from "./scenes"
+import xGameConfig from "./GameConfig"
 
 const config : Phaser.Types.Core.GameConfig = {
-    width : 500,
-    height : 500,
-    type : Phaser.AUTO,
-    parent : "game",
+    width : xGameConfig.width,
+    height : xGameConfig.height,
+    type : xGameConfig.type,
+    parent : xGameConfig.parent,
 
-    scale : {
-        mode : Phaser.Scale.FIT,
-        autoCenter : Phaser.Scale.CENTER_BOTH,
-        parent : "game"
-    },
+    scale : xGameConfig.scale,
 
-    scene : Scenes,
-
-    
-
+    scene : Scenes
 }
+
+console.log(Scenes)
 
 export class Game extends Phaser.Game {
     constructor(config:Phaser.Types.Core.GameConfig){
@@ -28,5 +24,9 @@ export class Game extends Phaser.Game {
 
 window.addEventListener("load",()=>{
     const game = new Game(config);
+
+    game.scene.start("inputManager")
     game.scene.start("load")
+
+    console.log(Phaser.Input.Keyboard.KeyCodes)
 })
