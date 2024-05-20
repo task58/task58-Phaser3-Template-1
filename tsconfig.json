@@ -1,8 +1,8 @@
 {
-    "include": ["./src/**/*"],
+    "include": ["./src/**/*","./types/**/*"],
     "compilerOptions": {
       "target": "esnext",
-      "module": "CommonJS", 
+      "module": "CommonJS",
       "noImplicitAny": true, 
       // "traceResolution": true
     }

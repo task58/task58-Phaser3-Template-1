@@ -25,6 +25,10 @@ module.exports = {
                 test: /phaser\.js&/, 
                 loader:"expose-loader"
                 
+            },
+            {
+                test:/\.(gif|png|jpg)$/,
+                loader:"url-loader"
             }
         ]
     },

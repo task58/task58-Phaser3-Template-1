@@ -1,7 +1,6 @@
 import imageAssets from "../assets/imageAssets"
 
 
-
 export default class LoadScene extends Phaser.Scene {
     constructor(){
         super({
@@ -19,12 +18,12 @@ export default class LoadScene extends Phaser.Scene {
         })
 
         for(var image of imageAssets){
-            this.load.image(image.key,image.path)
+            this.textures.addBase64(image.key,image.base64)
         }
 
         for(var i=0;i < 100;i++){
             for(var image of imageAssets){
-                this.load.image(image.key,image.path)
+                this.textures.addBase64(image.key,image.base64)
             }
         }
 
