@@ -22,11 +22,9 @@ export class Game extends Phaser.Game {
     }
 }
 
-window.addEventListener("load",()=>{
+window.addEventListener("click",()=>{
     const game = new Game(config);
 
     game.scene.start("inputManager")
     game.scene.start("load")
-
-    console.log(Phaser.Input.Keyboard.KeyCodes)
 })
