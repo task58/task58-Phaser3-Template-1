@@ -1,7 +1,7 @@
 import "phaser"
 
-import Scenes from "./scenes"
-import GameConfig from "./GameConfig"
+import Scenes from "./scenes" //Sceneの配列
+import GameConfig from "./GameConfig" //Gameオブジェクトに渡すためのコンフィグ
 
 const config : Phaser.Types.Core.GameConfig = {
     width : GameConfig.width,
@@ -14,7 +14,7 @@ const config : Phaser.Types.Core.GameConfig = {
     scene : Scenes
 }
 
-console.log(Scenes)
+// console.log(Scenes)
 
 export class Game extends Phaser.Game {
     constructor(config:Phaser.Types.Core.GameConfig){
@@ -25,7 +25,7 @@ export class Game extends Phaser.Game {
 let gameInstance:Game; 
 
 window.addEventListener("click",()=>{
-
+    //すでにゲームのインスタンスが存在している場合、実行しない。
     if(gameInstance)return
 
     gameInstance = new Game(config);
