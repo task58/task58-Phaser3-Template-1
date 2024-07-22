@@ -1,15 +1,15 @@
 import "phaser"
 
 import Scenes from "./scenes"
-import xGameConfig from "./GameConfig"
+import GameConfig from "./GameConfig"
 
 const config : Phaser.Types.Core.GameConfig = {
-    width : xGameConfig.width,
-    height : xGameConfig.height,
-    type : xGameConfig.type,
-    parent : xGameConfig.parent,
+    width : GameConfig.width,
+    height : GameConfig.height,
+    type : GameConfig.type,
+    parent : GameConfig.parent,
 
-    scale : xGameConfig.scale,
+    scale : GameConfig.scale,
 
     scene : Scenes
 }

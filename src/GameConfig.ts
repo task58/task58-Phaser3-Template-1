@@ -1,4 +1,4 @@
-class xGameConfig{
+class GameConfig{
     static width = 1600
     static height = 900
     static type = Phaser.AUTO
@@ -11,4 +11,4 @@ class xGameConfig{
     }
 }
 
-export default xGameConfig
+export default GameConfig
