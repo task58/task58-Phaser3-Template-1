@@ -37,7 +37,7 @@ module.exports = {
             directory : path.resolve(__dirname,"./dist")
         },
         host:"127.0.0.1",
-        port:8080,
+        port:1558,
         open:true
     }
 }
