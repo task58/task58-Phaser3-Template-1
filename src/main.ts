@@ -22,9 +22,14 @@ export class Game extends Phaser.Game {
     }
 }
 
-window.addEventListener("click",()=>{
-    const game = new Game(config);
+let gameInstance:Game; 
 
-    game.scene.start("inputManager")
-    game.scene.start("load")
+window.addEventListener("click",()=>{
+
+    if(gameInstance)return
+
+    gameInstance = new Game(config);
+
+    gameInstance.scene.start("inputManager")
+    gameInstance.scene.start("load")
 })
