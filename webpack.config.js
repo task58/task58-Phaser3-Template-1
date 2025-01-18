@@ -29,7 +29,33 @@ module.exports = {
             {
                 test:/\.(gif|png|jpg)$/,
                 loader:"url-loader"
-            }
+            },
+            {
+                test:/\.json$/,
+                loader:"raw-loader",
+                type:"javascript/auto"
+            },
+			{
+				test:/\.m4a$/,
+				use : [
+					{
+						loader : "file-loader",
+						options:{
+							name:"[name]_[hash].[ext]",
+							outputPath:(url, resourcePath)=>{
+								if(/bgm/.test(resourcePath)){
+									return "assets/sounds/bgm/"+url
+								}
+							},
+							publicPath:(url, resourcePath)=>{
+								if(/bgm/.test(resourcePath)){
+									return "/assets/sounds/bgm/"+url
+								}
+							}
+						}
+					}
+				]
+			}
         ]
     },
     devServer:{
@@ -37,7 +63,7 @@ module.exports = {
             directory : path.resolve(__dirname,"./dist")
         },
         host:"127.0.0.1",
-        port:1558,
+        port:8080,
         open:true
     }
 }
