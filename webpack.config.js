@@ -45,11 +45,15 @@ module.exports = {
 							outputPath:(url, resourcePath)=>{
 								if(/bgm/.test(resourcePath)){
 									return "assets/sounds/bgm/"+url
+								}else{
+									return "assets/sounds/others/"+url
 								}
 							},
 							publicPath:(url, resourcePath)=>{
 								if(/bgm/.test(resourcePath)){
 									return "/assets/sounds/bgm/"+url
+								}else{
+									return "/assets/sounds/others/"+url
 								}
 							}
 						}

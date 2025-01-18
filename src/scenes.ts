@@ -8,6 +8,20 @@ import InputManager from "./plugins/inputManager/InputManager"; //入力管理
 
 //testScenes
 import TestScene from "./scenes/testScene";
+import SoundManager from "./plugins/soundManager/soundManager";
 
-export default [LoadScene,TitleScene,MenuScene,InputManager]
-export {LoadScene,TitleScene,MenuScene,InputManager}
+export default [
+	InputManager,
+	SoundManager,
+	LoadScene,
+	TitleScene,
+	MenuScene,
+]
+
+export {
+	LoadScene,
+	TitleScene,
+	MenuScene,
+	InputManager,
+	SoundManager
+}

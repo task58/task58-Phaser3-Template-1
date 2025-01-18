@@ -1,4 +1,6 @@
 import imageAssets from "../assets/imageAssets"
+import soundAssets from "../assets/soundAssets"
+import SoundManager from "../plugins/soundManager/soundManager"
 
 
 export default class LoadScene extends Phaser.Scene {
@@ -26,6 +28,15 @@ export default class LoadScene extends Phaser.Scene {
         for(var image of imageAssets){
             this.load.image(image.key,image.base64)
         }
+
+		for (var sound of soundAssets) {
+			this.load.audio({
+				key : sound.key,
+				url : sound.data
+			});
+			SoundManager.instance.addSoundKey(sound.key)
+			console.log(`Added Sound : ${sound.key}`);
+		}
 
         this.load.on("complete",()=>{
             console.log("Load Files : complete")

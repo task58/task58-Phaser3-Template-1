@@ -12,6 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "expose-loader": "^5.0.0",
+    "file-loader": "^6.2.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.4.5",
     "url-loader": "^4.1.1",
